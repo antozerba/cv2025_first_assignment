@@ -2,7 +2,7 @@ clc, clearvars, close all
 %------------------
 %PUNTO 1
 %------------------
-img = imread("i235.png");
+img = imread("img/i235.png");
 img = double(img);
 figure, imagesc(img), colormap gray
 figure, imhist(uint8(img));
