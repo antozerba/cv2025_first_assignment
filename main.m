@@ -68,8 +68,8 @@ figure, imagesc(filter_img), colormap gray, title('Low Pass Filter 3 Salt noise'
 figure, imhist(uint8(filter_img)), title('Low Pass Filter Histogram 3 Salt noise');
 %LOW PASS GAUSSIAN 7x7 SALT NOISE
 [filter_img, filter] = low_pass_gaussian_filter(salt_img, 7, 1.17);
-% figure, imagesc(filter), title('Low Pass Filter 7 Salt noise ') %gia mostrato su
-% figure, surf(filter), title('Surf Low Pass Filter 7  ') %gia mostrato su
+figure, imagesc(filter), title('Low Pass Filter 7 Salt noise ') %gia mostrato su
+figure, surf(filter), title('Surf Low Pass Filter 7  ') %gia mostrato su
 figure, imagesc(filter_img), colormap gray, title('Low Pass Filter 7 Salt noise');
 figure, imhist(uint8(filter_img)), title('Low Pass Filter Histogram 7 Salt noise');
 
