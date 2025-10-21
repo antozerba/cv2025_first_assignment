@@ -24,74 +24,74 @@ figure, imhist(uint8(salt_img)), title('Salt and Pepper Histogram');
 
 %MOVING AVARAGE FILTER 3x3 GAUSS NOISE
 [filter_img, K] = moving_average(img_gaus, 3);
-figure, imagesc(K), title('Moving Average Filter 3x3 Gauss noise')
-figure, surf(K), title('Surf Moving Average Filter 3x3')
-figure,imagesc(filter_img),colormap gray,title('Moving Average Image 3x3 Gauss noise')
-figure, imhist(uint8(filter_img)), title('Moving Average Image Histogram 3x3 Gauss noise');
+figure, imagesc(K), title('Moving Average Filter 3 Gauss noise')
+figure, surf(K), title('Surf Moving Average Filter 3')
+figure,imagesc(filter_img),colormap gray,title('Moving Average Image 3 Gauss noise')
+figure, imhist(uint8(filter_img)), title('Moving Average Image Histogram 3 Gauss noise');
 %MOVING AVARAGE FILTER 7x7 GAUSS NOISE
 [filter_img, K] = moving_average(img_gaus, 7);
-figure, imagesc(K), title('Moving Average Filter 7x7 Gauss noise')
-figure, surf(K), title('Surf Moving Average Filter 7x7')
-figure,imagesc(filter_img),colormap gray,title('Moving Average Image 7x7 Gauss noise')
-figure, imhist(uint8(filter_img)), title('Moving Average Image Histogram 7x7 Gauss noise');
+figure, imagesc(K), title('Moving Average Filter 7 Gauss noise')
+figure, surf(K), title('Surf Moving Average Filter 7 ')
+figure,imagesc(filter_img),colormap gray,title('Moving Average Image 7 Gauss noise')
+figure, imhist(uint8(filter_img)), title('Moving Average Image Histogram 7 Gauss noise');
 %MOVING AVARAGE FILTER 3x3 SALT NOISE
 [filter_img, K] = moving_average(salt_img, 3);
-figure, imagesc(K), title('Moving Average Filter 3x3 Salt noise')
-figure, surf(K), title('Surf Moving Average Filter 3x3')
-figure,imagesc(filter_img),colormap gray,title('Moving Average Image 3x3 Salt noise')
-figure, imhist(uint8(filter_img)), title('Moving Average Image Histogram 3x3 Salt noise');
+figure, imagesc(K), title('Moving Average Filter 3 Salt noise')
+figure, surf(K), title('Surf Moving Average Filter 3')
+figure,imagesc(filter_img),colormap gray,title('Moving Average Image 3 Salt noise')
+figure, imhist(uint8(filter_img)), title('Moving Average Image Histogram 3 Salt noise');
 %MOVING AVARAGE FILTER 7x7 SALT NOISE
 [filter_img, filter] = moving_average(salt_img, 7);
-figure, imagesc(filter), title('Moving Average Filter 7x7 Salt noise')
-figure, surf(filter), title('Surf Moving Average Filter 7x7')
-figure,imagesc(filter_img),colormap gray,title('Moving Average Image 7x7 Salt noise')
-figure, imhist(uint8(filter_img)), title('Moving Average Image Histogram 7x7 Salt noise');
+figure, imagesc(filter), title('Moving Average Filter 7 Salt noise')
+figure, surf(filter), title('Surf Moving Average Filter 7 ')
+figure,imagesc(filter_img),colormap gray,title('Moving Average Image 7 Salt noise')
+figure, imhist(uint8(filter_img)), title('Moving Average Image Histogram 7 Salt noise');
 
 
 %LOW PASS GAUSSIAN 3x3 GAUSS NOISE
 [filter_img, filter] = low_pass_gaussian_filter(img_gaus, 3, 0.5);
-figure, imagesc(filter), title('Low Pass Filter 3x3 Gauss noise ')
-figure, surf(filter), title('Surf Low Pass Filter 3x3')
-figure, imagesc(filter_img), colormap gray, title('Low Pass Filter 3x3 Gauss noise');
-figure, imhist(uint8(filter_img)), title('Low Pass Filter Histogram 3x3 Gauss noise');
+figure, imagesc(filter), title('Low Pass Filter 3 Gauss noise ')
+figure, surf(filter), title('Surf Low Pass Filter 3  ')
+figure, imagesc(filter_img), colormap gray, title('Low Pass Filter 3 Gauss noise');
+figure, imhist(uint8(filter_img)), title('Low Pass Filter Histogram 3 Gauss noise');
 %LOW PASS GAUSSIAN 7x7 GAUSS NOISE
 [filter_img, filter] = low_pass_gaussian_filter(img_gaus, 7, 1.17);
-figure, imagesc(filter), title('Low Pass Filter 7x7 Gauss noise ')
-figure, surf(filter), title('Surf Low Pass Filter 7x7')
-figure, imagesc(filter_img), colormap gray, title('Low Pass Filter 7x7 Gauss noise');
-figure, imhist(uint8(filter_img)), title('Low Pass Filter Histogram 7x7 Gauss noise');
+figure, imagesc(filter), title('Low Pass Filter 7 Gauss noise ')
+figure, surf(filter), title('Surf Low Pass Filter 7  ')
+figure, imagesc(filter_img), colormap gray, title('Low Pass Filter 7 Gauss noise');
+figure, imhist(uint8(filter_img)), title('Low Pass Filter Histogram 7 Gauss noise');
 
 %LOW PASS GAUSSIAN 3x3 SALT NOISE
 [filter_img, filter] = low_pass_gaussian_filter(salt_img, 3, 0.5);
-%figure, imagesc(filter), title('Low Pass Filter 3x3 Salt noise ')
-%figure, surf(filter), title('Surf Low Pass Filter 3x3')
-figure, imagesc(filter_img), colormap gray, title('Low Pass Filter 3x3 Salt noise');
-figure, imhist(uint8(filter_img)), title('Low Pass Filter Histogram 3x3 Salt noise');
+figure, imagesc(filter), title('Low Pass Filter 3 Salt noise ') %gia mostrato su
+figure, surf(filter), title('Surf Low Pass Filter 3  ') %gia mostrato su
+figure, imagesc(filter_img), colormap gray, title('Low Pass Filter 3 Salt noise');
+figure, imhist(uint8(filter_img)), title('Low Pass Filter Histogram 3 Salt noise');
 %LOW PASS GAUSSIAN 7x7 SALT NOISE
 [filter_img, filter] = low_pass_gaussian_filter(salt_img, 7, 1.17);
-%figure, imagesc(filter), title('Low Pass Filter 7x7 Salt nois') 
-%figure, surf(filter), title('Surf Low Pass Filter 7x7') 
+figure, imagesc(filter), title('Low Pass Filter 7x7 Salt noise ') %gia mostrato su
+figure, surf(filter), title('Surf Low Pass Filter 7x7  ') %gia mostrato su
 figure, imagesc(filter_img), colormap gray, title('Low Pass Filter 7x7 Salt noise');
 figure, imhist(uint8(filter_img)), title('Low Pass Filter Histogram 7x7 Salt noise');
 
 
 %MEDIAN FILTER 3x3 GAUSS NOISE
 filter_img = median_filter(img_gaus, 3);
-figure, imagesc(filter_img), colormap gray, title('Median Filter 3x3 Gauss noise');
-figure, imhist(uint8(filter_img)), title('Median Filter Histogram 3x3 Gauss noise');
+figure, imagesc(filter_img), colormap gray, title('Median Filter 3 Gauss noise');
+figure, imhist(uint8(filter_img)), title('Median Filter Histogram 3 Gauss noise');
 %MEDIAN FILTER 7x7 GAUSS NOISE
 filter_img = median_filter(img_gaus, 7);
-figure, imagesc(filter_img), colormap gray, title('Median Filter 7x7 Gauss noise');
-figure, imhist(uint8(filter_img)), title('Median Filter Histogram 7x7 Gauss noise');
+figure, imagesc(filter_img), colormap gray, title('Median Filter 7 Gauss noise');
+figure, imhist(uint8(filter_img)), title('Median Filter Histogram 7 Gauss noise');
 
 %MEDIAN FILTER 3x3 SALT NOISE
 filter_img = median_filter(salt_img, 3);
-figure, imagesc(filter_img), colormap gray, title('Median Filter 3x3 Salt noise');
-figure, imhist(uint8(filter_img)), title('Median Filter Histogram 3x3 Salt noise');
+figure, imagesc(filter_img), colormap gray, title('Median Filter 3 Salt noise');
+figure, imhist(uint8(filter_img)), title('Median Filter Histogram 3 Salt noise');
 %MEDIAN FILTER 7x7 SALT NOISE
 filter_img = median_filter(salt_img, 7);
-figure, imagesc(filter_img), colormap gray, title('Median Filter 7x7 Salt noise');
-figure, imhist(uint8(filter_img)), title('Median Filter Histogram 7x7 Salt noise');
+figure, imagesc(filter_img), colormap gray, title('Median Filter 7 Salt noise');
+figure, imhist(uint8(filter_img)), title('Median Filter Histogram 7 Salt noise');
 
 
 %---------------
