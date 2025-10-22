@@ -4,18 +4,17 @@ clc, clearvars, close all
 %PUNTO 1
 %------------------
 img = imread("img/i235.png");
-%img = imread("img/tree.png");
-img = double(img);
+%img = imread("img/tree.png"); //uncomment for the second image
 figure, imagesc(img), colormap gray
 figure, imhist(uint8(img));
 
 %Gaussian Noise (standard deviation=20)
-img_gaus = gaussian_noise(img, 20);
+img_gaus = gaussian_noise(double(img), 20);
 figure, imagesc(img_gaus), colormap gray, title('Gaussian Noise Image');
 figure, imhist(uint8(img_gaus)), title('Gaussian Histogram');
  
 %Salt & Pepper noise (density=20%) 
-salt_img = salt_and_pepper_noise(img, 0.2);
+salt_img = salt_and_pepper_noise(double(img), 0.2);
 figure, imagesc(salt_img), colormap gray, title('Salt and Pepper Noise Image')
 figure, imhist(uint8(salt_img)), title('Salt and Pepper Histogram');
 
@@ -37,14 +36,14 @@ figure,imagesc(filter_img),colormap gray,title('Moving Average Image 7x7 Gauss n
 figure, imhist(uint8(filter_img)), title('Moving Average Image Histogram 7x7 Gauss noise');
 %MOVING AVARAGE FILTER 3x3 SALT NOISE
 [filter_img, K] = moving_average(salt_img, 3);
-figure, imagesc(K), title('Moving Average Filter 3x3 Salt noise')
-figure, surf(K), title('Surf Moving Average Filter 3x3')
+%figure, imagesc(K), title('Moving Average Filter 3x3 Salt noise')
+%figure, surf(K), title('Surf Moving Average Filter 3x3')
 figure,imagesc(filter_img),colormap gray,title('Moving Average Image 3x3 Salt noise')
 figure, imhist(uint8(filter_img)), title('Moving Average Image Histogram 3x3 Salt noise');
 %MOVING AVARAGE FILTER 7x7 SALT NOISE
 [filter_img, filter] = moving_average(salt_img, 7);
-figure, imagesc(filter), title('Moving Average Filter 7x7 Salt noise')
-figure, surf(filter), title('Surf Moving Average Filter 7x7')
+%figure, imagesc(filter), title('Moving Average Filter 7x7 Salt noise')
+%figure, surf(filter), title('Surf Moving Average Filter 7x7')
 figure,imagesc(filter_img),colormap gray,title('Moving Average Image 7x7 Salt noise')
 figure, imhist(uint8(filter_img)), title('Moving Average Image Histogram 7x7 Salt noise');
 
@@ -119,7 +118,8 @@ figure, imagesc(filter), title('Blurring Filter') %filter
 figure, surf(filter), title('Surf Blurring Filter'); %surf filter
 
 %SHARPENING
-[filter_img, filter] = sharpening_filter(img, 7);
+[filter_img, filter, detail_img] = sharpening_filter(img, 7);
+figure, imagesc(detail_img), colormap gray, title('Sharpening Detail Image')
 figure, imagesc(filter_img), colormap gray, title('Sharpening Filter Image')
 figure, imagesc(filter), title('Sharpening Filter') %filter
 figure, surf(filter), title('Surf Sharpening Filter'); %surf filter
